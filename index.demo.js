@@ -4,5 +4,5 @@ fetchShortVolume({
   date: '2019-02-28',
   market: 'NYSE'
 })
-  .then(console.log)
+  .then(a => console.log(a[a.length-1]))
   .catch(console.error)
