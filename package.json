@@ -1,0 +1,17 @@
+{
+  "name": "regsho",
+  "version": "1.0.0",
+  "description": "Get last reported shorted volume for US stocks",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap *.spec.js",
+    "start": "node index.demo.js"
+  },
+  "author": "tor@finsyn.se",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "csv-parse": "^4.3.3",
+    "ramda": "^0.26.1"
+  }
+}
