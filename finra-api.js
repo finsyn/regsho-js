@@ -14,17 +14,19 @@ const toFinraAttr = evolve({
   market: prop(__, marketTranslations)
 })
 
+const toFinraUrl = pipe(
+  toFinraAttr,
+  ({ market, date }) => `${origin}/${market}shvol${date}.txt`
+)
+
 // { date, market } -> Promise(ShortVolume[])
 const fetchShortVolume = pipe(
-  toFinraAttr,
-  ({ date, market }) => axios({
-    url: `${origin}/${market}shvol${date}.txt`,
-    method: 'GET'
-  }),
+  toFinraUrl,
+  url => axios.get(url),
   then(prop('data'))
 )
 
 module.exports = {
-  toFinraAttr,
+  toFinraUrl,
   fetchShortVolume
 }
