@@ -1,5 +1,6 @@
 const parse = require('csv-parse/lib/sync')
-const { tap, identity, constructN, splitAt, join, pipe, curry, __, dropLast } = require('ramda')
+const { tap, identity, constructN, splitAt, join, pipe, curry, __, dropLast,
+        multiply } = require('ramda')
 
 const casters = {
   'Date': pipe(
@@ -10,9 +11,9 @@ const casters = {
     constructN(1, Date)
   ),
   'Symbol': identity,
-  'ShortVolume': constructN(1, Number),
-  'ShortExemptVolume': constructN(1, Number),
-  'TotalVolume': constructN(1, Number),
+  'ShortVolume': multiply(1),
+  'ShortExemptVolume': multiply(1),
+  'TotalVolume': multiply(1),
   'Market': identity 
 }
 
