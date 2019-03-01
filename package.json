@@ -1,6 +1,6 @@
 {
   "name": "regsho",
-  "version": "1.0.0",
+  "version": "1.0.1-0",
   "description": "Get last reported shorted volume for US stocks",
   "main": "index.js",
   "scripts": {
